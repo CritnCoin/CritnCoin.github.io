@@ -1,0 +1,1 @@
+# CritnCoin.github.io
