@@ -16,25 +16,6 @@ high-risk loot survival and torchlit dungeon delving.
 - **Resume** — game development resume (work in progress)
 - **Contact** — studio contact hub
 
-## Tech
-
-Plain, hand-written **HTML, CSS, and JavaScript**. No frameworks, no build tools,
-no npm. The entire site uses a single stylesheet (`css/style.css`) and a single
-minimal script (`js/main.js`).
-
-## Preview locally
-
-From the repository root, start any static file server, for example:
-
-```bash
-# Python 3
-python -m http.server 8000
-```
-
-Then open <http://localhost:8000/> in your browser. (Using a local server — rather
-than opening files directly — ensures the clean directory links like `/projects/`
-resolve correctly.)
-
 ## Notice — Not Open Source
 
 This repository is **not open source**. All rights reserved.
