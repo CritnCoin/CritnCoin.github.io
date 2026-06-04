@@ -291,6 +291,15 @@ a:hover { color: var(--gold-bright); }
   max-width: 300px;
   margin: 0 auto;
 }
+/* page-header title art (Dev Log / Road Map page tops) — larger, with the
+   same continuous float + gold glow as the game title */
+.page-title-png {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  animation: float-soft 6s ease-in-out infinite,
+             title-glow 5s ease-in-out infinite;
+}
 .title-art-anim img {
   animation: float-soft 6s ease-in-out infinite,
              title-glow 5s ease-in-out infinite;
