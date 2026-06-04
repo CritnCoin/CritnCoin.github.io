@@ -957,6 +957,10 @@ ul.gothic-list li::before {
   background-image: url("../assets/images/buttons/button-gold.png");
   color: #2c1c06;
   text-shadow: 0 1px 1px rgba(255,236,190,0.55), 0 0 2px rgba(0,0,0,0.4);
+  /* the gold plate seats its label a hair high — shift it down ~2px so it
+     lines up with the green/red plates (total height unchanged) */
+  padding-top: calc(0.55rem + 2px);
+  padding-bottom: calc(0.55rem - 2px);
 }
 .btn-ornate:hover {
   transform: translateY(-3px);
