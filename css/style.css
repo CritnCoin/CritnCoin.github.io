@@ -284,6 +284,22 @@ a:hover { color: var(--gold-bright); }
   box-shadow: var(--shadow-deep), 0 0 24px rgba(224,133,42,0.45);
 }
 
+/* PNG section titles (Dev Log / Road Map art) — sized + continuously
+   breathing/glowing, matching the game-title treatment in the hero */
+.section-title-png {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.title-art-anim img {
+  animation: float-soft 6s ease-in-out infinite,
+             title-glow 5s ease-in-out infinite;
+}
+/* stagger the roadmap title so the pair don't pulse in lockstep */
+.two-col .title-art-anim:nth-of-type(2) img {
+  animation-delay: 0.5s, 0.8s;
+}
+
 /* ---------------------------------------------------------------------
    7. PAGE TITLE PLAQUE (used when a title PNG is missing — WIP)
    --------------------------------------------------------------------- */
