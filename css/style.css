@@ -7,12 +7,14 @@
 
 /* ---------------------------------------------------------------------
    1. FONTS
-   Kingdom  -> headings, titles, hero text, nav title, button labels.
+   "Kingdom" -> display family for headings, titles, hero text, nav title,
+   button labels. It now maps to Cinzel Decorative Bold (the Kingdom face
+   was retired); the alias is kept so every existing rule picks it up.
    Cinzel Decorative -> body, cards, descriptions, general text.
    --------------------------------------------------------------------- */
 @font-face {
   font-family: "Kingdom";
-  src: url("../assets/fonts/Kingdom_v1.4.ttf") format("truetype");
+  src: url("../assets/fonts/CinzelDecorative-Bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
