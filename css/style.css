@@ -87,12 +87,13 @@ body {
   background-position: center top;
   background-attachment: fixed;
   line-height: 1.6;
-  cursor: url("../assets/cursors/cursor-default.png") 4 2, auto;
+  /* 64x64 cursors — hotspots scaled 2x from the original 32x32 art */
+  cursor: url("../assets/cursors/cursor-default.png") 8 4, auto;
 }
 
 a, button, .btn, .nav-links a, summary,
 [role="button"], .thumbnail-frame, .devlog-card {
-  cursor: url("../assets/cursors/cursor-pointer.png") 6 2, pointer;
+  cursor: url("../assets/cursors/cursor-pointer.png") 12 6, pointer;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -227,6 +228,14 @@ a:hover { color: var(--gold-bright); }
   color: #4a2d12;
   text-shadow: 0 1px 0 rgba(255,255,255,0.25);
 }
+/* Bullet lists/links inside a parchment panel must use dark ink — the
+   default light parchment text washes out on the light background. */
+.panel.parchment ul.gothic-list li,
+.panel.parchment li,
+.panel.parchment p,
+.panel.parchment .muted { color: #2c2418; }
+.panel.parchment a { color: #6e3d12; }
+.panel.parchment a:hover { color: #4a2d12; }
 
 /* ---------------------------------------------------------------------
    6. HERO
@@ -266,6 +275,13 @@ a:hover { color: var(--gold-bright); }
 .title-art-link:hover img {
   transform: scale(1.02);
   filter: drop-shadow(0 8px 22px rgba(224,133,42,0.35));
+}
+/* plaque-style title links (Dev Log / Road Map) glow + lift on hover */
+.title-plaque { transition: transform 0.18s ease, box-shadow 0.2s ease, color 0.18s ease; }
+.title-art-link:hover .title-plaque {
+  transform: translateY(-3px);
+  color: #fff;
+  box-shadow: var(--shadow-deep), 0 0 24px rgba(224,133,42,0.45);
 }
 
 /* ---------------------------------------------------------------------
@@ -366,23 +382,33 @@ a:hover { color: var(--gold-bright); }
 .btn {
   display: inline-block;
   font-family: "Kingdom", serif;
-  font-size: 1rem;
+  font-size: 1.2rem;            /* ~19px desktop — larger, more readable label */
   letter-spacing: 1px;
   text-align: center;
-  padding: 0.65rem 1.4rem;
+  padding: 0.6rem 1.5rem;
   border: var(--border-iron);
   border-radius: var(--radius);
   background: linear-gradient(180deg, var(--iron-light), var(--iron));
   color: var(--parchment);
   box-shadow: 0 3px 0 #000, var(--shadow-inset);
-  transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.15s ease;
+  transition: transform 0.12s ease, box-shadow 0.18s ease,
+              filter 0.15s ease, border-color 0.18s ease, color 0.15s ease;
   user-select: none;
 }
-.btn:hover { filter: brightness(1.15); color: var(--gold-bright); }
+/* Default (iron/gold) hover -> gold torchlight glow + slight lift */
+.btn:hover {
+  filter: brightness(1.15);
+  color: var(--gold-bright);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 #000, 0 0 18px rgba(224,133,42,0.45),
+              0 0 6px rgba(233,200,105,0.55), var(--shadow-inset);
+}
 .btn:active {
   transform: translateY(2px);
   box-shadow: 0 1px 0 #000, var(--shadow-inset);
 }
+.btn:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
 
 .btn-main  { color: var(--gold-bright); outline: var(--trim-gold); outline-offset: -6px; }
 .btn-gold  {
@@ -390,19 +416,41 @@ a:hover { color: var(--gold-bright); }
   background: linear-gradient(180deg, var(--gold-bright), var(--gold));
   border-color: #5e4a18;
 }
-.btn-gold:hover { color: #000; }
+/* GOLD -> glowing gold on hover */
+.btn-main:hover,
+.btn-gold:hover {
+  color: #000;
+  border-color: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 #000, 0 0 22px rgba(233,200,105,0.65),
+              0 0 9px rgba(224,133,42,0.6), var(--shadow-inset);
+}
 .btn-red {
   color: #ffd9d2;
   background: linear-gradient(180deg, var(--blood-bright), var(--blood));
   border-color: #3a0c07;
 }
-.btn-red:hover { color: #fff; }
+/* RED / danger -> glowing blood-red on hover */
+.btn-red:hover {
+  color: #fff;
+  border-color: var(--blood-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 #000, 0 0 22px rgba(192,48,31,0.7),
+              0 0 9px rgba(140,28,19,0.6), var(--shadow-inset);
+}
 .btn-green {
   color: #eaffd6;
   background: linear-gradient(180deg, var(--green-bright), var(--green-rune));
   border-color: #2a3a18;
 }
-.btn-green:hover { color: #fff; }
+/* GREEN / confirm -> glowing rune-green on hover */
+.btn-green:hover {
+  color: #fff;
+  border-color: var(--green-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 #000, 0 0 22px rgba(141,180,84,0.65),
+              0 0 9px rgba(93,125,58,0.6), var(--shadow-inset);
+}
 
 .btn-disabled,
 .btn[disabled],
@@ -592,6 +640,25 @@ ul.gothic-list li::before {
   margin-bottom: 0.4rem;
 }
 .roadmap-item p { color: var(--parchment-dim); margin: 0; }
+/* small "Phase 01" kicker above each milestone title */
+.roadmap-phase {
+  display: block;
+  font-family: "Kingdom", serif;
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--torch);
+  margin-bottom: 0.25rem;
+}
+/* optional compact bullet list inside a roadmap item */
+.roadmap-item ul.gothic-list { margin: 0.6rem 0 0; }
+.roadmap-item ul.gothic-list li { font-size: 0.92rem; margin-bottom: 0.3rem; }
+/* gentle lift + glow when hovering a milestone */
+.roadmap-item { transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+.roadmap-item:hover {
+  transform: translateX(3px);
+  box-shadow: var(--shadow-deep), 0 0 16px rgba(224,133,42,0.22);
+}
 .roadmap-badge {
   font-family: "Kingdom", serif;
   font-size: 0.72rem;
@@ -614,6 +681,16 @@ ul.gothic-list li::before {
 .roadmap-item.status-planned .roadmap-badge { color: var(--parchment-dim); }
 .roadmap-item.status-planned { opacity: 0.92; }
 
+/* RESEARCH — cold arcane blue, marks systems still being studied */
+.roadmap-item.status-research { border-color: #1f3340; opacity: 0.95; }
+.roadmap-item.status-research::before { background: #5fa8c7; box-shadow: 0 0 12px rgba(95,168,199,0.8), 0 0 0 3px #0c0a08; }
+.roadmap-item.status-research .roadmap-badge { color: #7fc1dc; }
+
+/* EXPERIMENTAL — runic violet, marks unproven/speculative directions */
+.roadmap-item.status-experimental { border-color: #3a2747; opacity: 0.95; }
+.roadmap-item.status-experimental::before { background: #9b6fc4; box-shadow: 0 0 12px rgba(155,111,196,0.8), 0 0 0 3px #0c0a08; }
+.roadmap-item.status-experimental .roadmap-badge { color: #b78fe0; }
+
 /* ---------------------------------------------------------------------
    14. SCREENSHOT GALLERY
    .screenshot-frame .thumbnail-frame .thumbnail-selected .lightbox-frame
@@ -629,6 +706,13 @@ ul.gothic-list li::before {
   outline-offset: -9px;
   border-radius: var(--radius);
   box-shadow: var(--shadow-deep);
+  transition: outline-color 0.18s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+/* screenshot frames light up gold on hover */
+.screenshot-frame:hover {
+  outline-color: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-deep), 0 0 22px rgba(224,133,42,0.38);
 }
 .screenshot-frame img,
 .screenshot-frame .frame-empty {
@@ -851,6 +935,10 @@ ul.gothic-list li::before {
   transform: translateY(-3px);
   filter: brightness(1.12) drop-shadow(0 6px 14px rgba(224,133,42,0.45));
 }
+/* Per-colour torchlight glow so each plate lights its own colour on hover */
+.btn-ornate-gold:hover  { filter: brightness(1.14) drop-shadow(0 0 16px rgba(233,200,105,0.7))  drop-shadow(0 6px 10px rgba(0,0,0,0.6)); }
+.btn-ornate-green:hover { filter: brightness(1.14) drop-shadow(0 0 16px rgba(141,180,84,0.7))   drop-shadow(0 6px 10px rgba(0,0,0,0.6)); }
+.btn-ornate-red:hover   { filter: brightness(1.14) drop-shadow(0 0 16px rgba(192,48,31,0.78))   drop-shadow(0 6px 10px rgba(0,0,0,0.6)); }
 .btn-ornate:active { transform: translateY(1px) scale(0.99); filter: brightness(0.95); }
 .btn-ornate:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
 
@@ -900,6 +988,25 @@ ul.gothic-list li::before {
   0%, 100% { text-shadow: 0 0 4px rgba(224,133,42,0.35); opacity: 0.85; }
   50%      { text-shadow: 0 0 14px rgba(224,133,42,0.9);  opacity: 1; }
 }
+/* page entrance: the main content fades + rises in on load */
+@keyframes page-rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+/* title-art breathing glow (game/company title PNG) */
+@keyframes title-glow {
+  0%, 100% { filter: drop-shadow(0 6px 16px rgba(0,0,0,0.8)); }
+  50%      { filter: drop-shadow(0 6px 16px rgba(0,0,0,0.8))
+                     drop-shadow(0 0 18px rgba(224,133,42,0.5)); }
+}
+/* divider line shimmer — a faint travelling highlight */
+@keyframes divider-shimmer {
+  0%   { background-position: -160% 0; }
+  100% { background-position: 260% 0; }
+}
+
+/* whole-page soft entrance (JS visitors only, so no-JS never flashes) */
+.has-js .page-wrap { animation: page-rise 0.55s ease both; }
 
 /* torchlight glow over the hero, gently flickering */
 .hero { position: relative; overflow: hidden; }
@@ -912,9 +1019,18 @@ ul.gothic-list li::before {
   background: radial-gradient(circle at 50% 0%, rgba(224,133,42,0.20), transparent 65%);
   animation: torch-flicker 4.5s ease-in-out infinite;
 }
-/* logo / title art breathes */
-.hero .logo-title,
-.hero .title-art-link img { animation: float-soft 6s ease-in-out infinite; }
+/* logo / title art breathes + glows softly (clickable game/company title) */
+.hero .logo-title { animation: float-soft 6s ease-in-out infinite; }
+.hero .title-art-link img {
+  animation: float-soft 6s ease-in-out infinite,
+             title-glow 5s ease-in-out infinite;
+}
+/* divider lines carry a faint travelling shimmer */
+.section-divider::before,
+.section-divider::after {
+  background-size: 200% 100%;
+  animation: divider-shimmer 6s linear infinite;
+}
 /* divider diamonds pulse like coals */
 .section-divider .diamond { animation: glow-pulse 3.2s ease-in-out infinite; }
 .section-divider .diamond:nth-child(2) { animation-delay: 0.5s; }
@@ -949,6 +1065,10 @@ ul.gothic-list li::before {
   .hero .button-row .btn,
   .hero .button-row .btn-ornate { width: 100%; }
   .btn-ornate { min-width: 0; width: 100%; max-width: 360px; }
+
+  /* mobile button labels: kept readable (~16–18px) without going oversized */
+  .btn { font-size: 1.08rem; padding: 0.6rem 1.3rem; }
+  .btn-ornate { font-size: 1.12rem; }
 
   .card-grid,
   .devlog-list { grid-template-columns: 1fr; }
