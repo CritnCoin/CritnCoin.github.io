@@ -3,293 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CritNCoin Studios | Dark Fantasy Game Development</title>
+  <meta name="description"
+    content="CritNCoin Studios — a dark fantasy game development studio building Descent Into Darkness, an old-school dungeon extraction RPG. Portfolio, research, roadmap, dev log, and contact." />
 
-  <title>CritNCoin Studios | Game Development Portfolio</title>
-
-  <meta
-    name="description"
-    content="CritNCoin Studios game development portfolio, roadmap, dev log, and contact hub."
-  />
-
-  <link rel="stylesheet" href="style.css" />
+  <!-- Homepage is at repo root -> css/ and js/ are direct children -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <div class="pixel-sky"></div>
-  <div class="scanlines"></div>
-
+  <!-- ============================ NAV ============================ -->
   <header class="site-header">
-    <a href="/" class="logo">CritNCoin Studios</a>
-
-    <nav class="nav-links">
-      <a href="/">Home</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
+    <a class="nav-title" href="index.html">
+      <img src="assets/images/branding/company-logo-title.png"
+           alt="CritNCoin Studios crest" />
+      <span>CritNCoin Studios</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html" class="active">Home</a>
+      <a href="projects/">Projects</a>
+      <a href="research/">Research</a>
+      <a href="resume/">Resume</a>
+      <a href="contact/">Contact</a>
+      <a href="https://github.com/CritnCoin" class="github"
+         target="_blank" rel="noopener noreferrer">GitHub</a>
     </nav>
   </header>
 
   <main class="page-wrap">
 
-    <!-- HERO SECTION -->
-    <section class="hero-panel">
-      <div class="hero-content">
-        <p class="small-label">Dark Fantasy Game Development Studio</p>
+    <!-- ============================ HERO ============================ -->
+    <section class="hero">
+      <img class="logo-title"
+           src="assets/images/branding/company-logo-title.png"
+           alt="CritNCoin Studios" />
+      <p class="small-label">Dark Fantasy Game Development Studio</p>
+      <h1>Forged in the Dark Below</h1>
+      <p class="hero-text">
+        CritNCoin Studios is an independent game development studio crafting grim
+        underground fantasy worlds — torchlit dungeon delving, high-risk loot
+        survival, and tabletop-inspired fantasy systems. This is the studio's
+        portfolio, project hub, and development journal.
+      </p>
+      <div class="button-row">
+        <a href="projects/descent-into-darkness/" class="btn-ornate btn-ornate-green">Enter the Dungeon</a>
+        <a href="projects/" class="btn-ornate btn-ornate-gold">View Projects</a>
+        <a href="contact/" class="btn-ornate btn-ornate-red">Get in Contact</a>
+      </div>
+    </section>
 
-        <h1>
-          Games forged
-          <span>in the dark below.</span>
-        </h1>
+    <div class="section-divider"><span class="diamond">&#9670;</span></div>
 
-        <p class="hero-text">
-          CritNCoin Studios is a game development hub focused on dark fantasy
-          worlds, dungeon crawling, extraction systems, grim RPG mechanics,
-          tactical risk, loot pressure, and player-driven survival.
-        </p>
-
-        <p class="hero-text">
-          This site tracks active projects, design notes, development progress,
-          portfolio work, future milestones, and public-facing updates.
-        </p>
-
-        <div class="button-row">
-          <a href="#portfolio" class="pixel-button">View Portfolio</a>
-          <a href="#contact" class="pixel-button alt">Get in Contact</a>
+    <!-- ===================== FEATURED PROJECT ===================== -->
+    <section aria-labelledby="featured-h">
+      <p class="small-label text-center">Featured Project</p>
+      <div class="panel gold-trim two-col">
+        <div>
+          <a class="title-art-link" href="projects/descent-into-darkness/"
+             aria-label="Open the Descent Into Darkness project page">
+            <img src="assets/images/branding/game-title.png"
+                 alt="Descent Into Darkness" />
+          </a>
+        </div>
+        <div>
+          <h2 id="featured-h">Descent Into Darkness</h2>
+          <p>
+            A dark fantasy dungeon extraction RPG built around brutal underground
+            expeditions, dangerous loot decisions, party survival, and the constant
+            pressure of choosing when to push deeper or escape with your spoils.
+          </p>
+          <p class="muted">
+            Currently in early development — establishing visual identity, the core
+            gameplay loop, combat feel, and grim dungeon atmosphere.
+          </p>
+          <div class="button-row" style="align-items:center;">
+            <span class="status-badge progress">In Development</span>
+            <a href="projects/descent-into-darkness/" class="btn-ornate btn-ornate-green">Project Page</a>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="hero-art" aria-label="Dark fantasy dungeon scene">
-        <div class="moon"></div>
-        <div class="tower"></div>
-        <div class="door"></div>
-        <div class="torch torch-left"></div>
-        <div class="torch torch-right"></div>
-        <div class="hero-ground"></div>
+    <div class="section-divider">
+      <span class="diamond">&#9670;</span>
+      <span class="diamond">&#9670;</span>
+      <span class="diamond">&#9670;</span>
+    </div>
+
+    <!-- ===================== NAVIGATION CARDS ===================== -->
+    <section aria-labelledby="explore-h">
+      <h2 id="explore-h" class="text-center">Explore the Hold</h2>
+      <div class="card-grid">
+
+        <article class="card">
+          <span class="card-kicker">Archive</span>
+          <h3>Projects</h3>
+          <p>The full portfolio of CritNCoin Studios projects, current and planned.</p>
+          <div class="card-actions"><a href="projects/" class="btn">Open Projects</a></div>
+        </article>
+
+        <article class="card">
+          <span class="card-kicker">Notes</span>
+          <h3>Research</h3>
+          <p>Design research, combat system notes, UI/UX studies, and technical experiments.</p>
+          <div class="card-actions"><a href="research/" class="btn">Open Research</a></div>
+        </article>
+
+        <article class="card">
+          <span class="card-kicker">Record</span>
+          <h3>Resume <span class="coming-soon-badge">WIP</span></h3>
+          <p>A game development resume — experience, tools, engines, and skills. Coming soon.</p>
+          <div class="card-actions"><a href="resume/" class="btn">Open Resume</a></div>
+        </article>
+
+        <article class="card">
+          <span class="card-kicker">Summon</span>
+          <h3>Contact</h3>
+          <p>Reach the studio for collaboration, questions, or portfolio inquiries.</p>
+          <div class="card-actions"><a href="contact/" class="btn">Get in Contact</a></div>
+        </article>
+
+        <article class="card">
+          <span class="card-kicker">External</span>
+          <h3>GitHub</h3>
+          <p>Source profile and public repositories for CritNCoin Studios.</p>
+          <div class="card-actions">
+            <a href="https://github.com/CritnCoin" class="btn"
+               target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+          </div>
+        </article>
+
       </div>
-    </section>
-
-    <!-- PORTFOLIO / FEATURED PROJECT -->
-    <section id="portfolio" class="featured-project">
-      <div>
-        <p class="small-label">Featured Project</p>
-        <h2>Descent Into Darkness</h2>
-
-        <p>
-          A dark fantasy dungeon extraction RPG centered on brutal underground
-          expeditions, dangerous loot decisions, party survival, tense combat,
-          and the constant pressure of deciding when to push deeper or escape.
-        </p>
-
-        <p>
-          The project is currently in early development, with focus on core
-          gameplay direction, visual identity, interface design, combat feel,
-          dungeon atmosphere, and progression systems.
-        </p>
-      </div>
-
-      <a href="/descent-into-darkness/" class="pixel-button">Project Page</a>
-    </section>
-
-    <!-- DESIGN PILLARS -->
-    <section class="card-grid">
-
-      <article class="pixel-card">
-        <span class="card-number">01</span>
-        <h2>Dungeon Crawling</h2>
-        <p>
-          Claustrophobic exploration, torchlit corridors, dungeon routes,
-          enemy pressure, resource management, and the feeling of descending
-          somewhere hostile.
-        </p>
-      </article>
-
-      <article class="pixel-card">
-        <span class="card-number">02</span>
-        <h2>Extraction Systems</h2>
-        <p>
-          Risk versus reward, loot pressure, inventory choices, survival
-          decisions, and the tension of escaping before the dungeon takes
-          everything back.
-        </p>
-      </article>
-
-      <article class="pixel-card">
-        <span class="card-number">03</span>
-        <h2>Dark Fantasy Identity</h2>
-        <p>
-          Grimy medieval atmosphere, cursed ruins, old stone corridors, worn
-          equipment, brutal encounters, strange relics, and dangerous silence.
-        </p>
-      </article>
-
-    </section>
-
-    <!-- ROADMAP INTRO -->
-    <section id="roadmap" class="featured-project">
-      <div>
-        <p class="small-label">Development Roadmap</p>
-        <h2>Current Build Direction</h2>
-
-        <p>
-          The current goal is to establish the project identity first: visual
-          tone, core gameplay loop, player fantasy, UI direction, and public
-          portfolio presentation.
-        </p>
-      </div>
-
-      <a href="#contact" class="pixel-button alt">Get in Contact</a>
-    </section>
-
-    <!-- ROADMAP PHASES 1-3 -->
-    <section class="card-grid">
-
-      <article class="pixel-card">
-        <span class="card-number">Phase 01</span>
-        <h2>Foundation</h2>
-        <p>
-          Define world tone, gameplay pillars, combat direction, dungeon identity,
-          extraction loop, class fantasy, and public project branding.
-        </p>
-      </article>
-
-      <article class="pixel-card">
-        <span class="card-number">Phase 02</span>
-        <h2>Prototype</h2>
-        <p>
-          Build early movement, interaction, inventory, dungeon rooms, enemy
-          encounters, loot pickup, extraction logic, and basic UI feedback.
-        </p>
-      </article>
-
-      <article class="pixel-card">
-        <span class="card-number">Phase 03</span>
-        <h2>Vertical Slice</h2>
-        <p>
-          Create a small playable slice with a complete dungeon route, combat
-          test, loot flow, escape condition, menu polish, and public screenshots.
-        </p>
-      </article>
-
-    </section>
-
-    <!-- ROADMAP PHASES 4-6 -->
-    <section class="card-grid">
-
-      <article class="pixel-card">
-        <span class="card-number">Phase 04</span>
-        <h2>Content Pass</h2>
-        <p>
-          Add more rooms, enemies, items, equipment types, environmental hazards,
-          dungeon events, merchant systems, and player progression.
-        </p>
-      </article>
-
-      <article class="pixel-card">
-        <span class="card-number">Phase 05</span>
-        <h2>Public Dev Log</h2>
-        <p>
-          Post development updates, screenshots, design notes, problems solved,
-          build milestones, and lessons learned while the project grows.
-        </p>
-      </article>
-
-      <article class="pixel-card">
-        <span class="card-number">Phase 06</span>
-        <h2>Playable Release</h2>
-        <p>
-          Prepare a small public demo or private test build once the core loop
-          feels stable, readable, tense, and worth showing.
-        </p>
-      </article>
-
-    </section>
-
-    <!-- RESUME PLACEHOLDER -->
-    <section id="resume" class="featured-project">
-      <div>
-        <p class="small-label">Resume</p>
-        <h2>Resume Coming Soon</h2>
-
-        <p>
-          This section is currently a work in progress. A dedicated game
-          development resume will be added later, focused on projects, tools,
-          engines, design work, technical skills, and completed milestones.
-        </p>
-      </div>
-
-      <a href="/resume/" class="pixel-button">Resume Page</a>
-    </section>
-
-    <!-- PORTFOLIO DETAILS -->
-    <section class="card-grid">
-
-      <article class="pixel-card">
-        <span class="card-number">Tools</span>
-        <h2>Engines & Software</h2>
-        <p>
-          Unreal Engine, Godot, Blender, GitHub, VS Code, Visual Studio, HTML,
-          CSS, C++, game design documentation, asset organization, and AI-assisted
-          development workflows.
-        </p>
-      </article>
-
-      <article class="pixel-card">
-        <span class="card-number">Focus</span>
-        <h2>Design Strengths</h2>
-        <p>
-          Dark fantasy worldbuilding, dungeon structure, item systems, survival
-          pressure, combat direction, grim UI design, progression planning, and
-          player risk systems.
-        </p>
-      </article>
-
-      <article class="pixel-card">
-        <span class="card-number">Status</span>
-        <h2>Currently Building</h2>
-        <p>
-          The current priority is shaping the public identity of CritNCoin Studios
-          while continuing development on the main dungeon extraction RPG project.
-        </p>
-      </article>
-
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="featured-project">
-      <div>
-        <p class="small-label">Contact</p>
-        <h2>Want to reach the studio?</h2>
-
-        <p>
-          For project questions, collaboration requests, portfolio inquiries,
-          or development-related contact, use the button below.
-        </p>
-      </div>
-
-      <a
-        href="mailto:critncoinstudios@gmail.com"
-        class="pixel-button alt"
-        aria-label="Get in contact with CritNCoin Studios"
-      >
-        Get in Contact
-      </a>
-    </section>
-
-    <!-- EXTRA LINKS -->
-    <section class="links-card">
-      <a href="https://github.com/CritnCoin" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
     </section>
 
   </main>
 
+  <!-- ============================ FOOTER ============================ -->
   <footer class="site-footer">
-    <p>© 2026 CritNCoin Studios. All rights reserved.</p>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">CritNCoin Studios</div>
+        <p class="muted">Grim underground fantasy. Forged in the dark below.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="https://github.com/CritnCoin" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="contact/">Contact</a>
+        <a href="#" aria-disabled="true" class="wip-note">Credits (WIP)</a>
+        <a href="#" aria-disabled="true" class="wip-note">Privacy (WIP)</a>
+      </nav>
+      <p class="footer-note">
+        &copy; <span data-year>2026</span> CritNCoin Studios. All rights reserved.
+      </p>
+    </div>
   </footer>
 
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "lighting-the-first-torch",
+    "title": "Lighting the First Torch",
+    "date": "2026-06-03",
+    "category": "Update",
+    "preview": "An introduction to Descent Into Darkness, the studio's direction, and what 'dungeon extraction' means for this project.",
+    "body": "<p>Welcome to the first entry in the Descent Into Darkness dev log. This is where the studio records the work as it happens — updates, patches, screenshots, and the occasional hard-won lesson from the dark.</p><p><strong>What is Descent Into Darkness?</strong> It is an old-school dungeon crawler reforged for a modern audience: a grim underground fantasy of torchlit corridors, cursed ruins, and the relentless arithmetic of risk and reward. You assemble a party, descend into the dark, and decide with every room whether to press deeper toward greater spoils or extract before the dungeon claims everything you carry.</p><p>The current focus is the foundation — visual identity, the core dungeon loop, and the feel of moving through a hostile place. More to come as the torch burns lower.</p>"
+  },
+  {
+    "id": "first-look-at-the-depths",
+    "title": "First Look at the Depths",
+    "date": "2026-06-02",
+    "category": "Screenshot",
+    "preview": "Early environment captures and a first look at the visual identity taking shape in the dark.",
+    "body": "<p>A short one. We've been blocking out the look of the early dungeon and putting the first creature renders through their paces. These are early — mesh tests and lighting studies rather than final in-game shots — but they set the tone: black iron, worn stone, and just enough torchlight to make the shadows worse.</p><p>You can see the current renders over on the <a href=\"../screenshots/\">Screenshots</a> page. Real in-game captures will replace them as the build comes together.</p>"
+  },
+  {
+    "id": "combat-feel-pass",
+    "title": "Combat Feel Pass",
+    "date": "2026-05-30",
+    "category": "Patch",
+    "preview": "Notes on making grim fantasy combat deliberate, weighty, and dangerous rather than fast and forgiving.",
+    "body": "<p>Combat in Descent Into Darkness should feel like a decision, not a reflex. This pass is about weight: telegraphed enemy threats, committed swings, and stamina that punishes panic. A single mistake should echo across the whole run.</p><p>Early goals for the combat loop:</p><ul class=\"gothic-list\"><li>Readable enemy wind-ups and clear threat tells</li><li>Deliberate attacks with real commitment and recovery</li><li>Resource pressure — stamina, torchlight, and health all matter</li><li>Positioning and party coordination over button-mashing</li></ul><p>Still rough, but the bones are forming.</p>"
+  }
+]

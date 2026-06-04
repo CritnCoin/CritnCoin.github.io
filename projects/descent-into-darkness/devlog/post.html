@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Log Post | Descent Into Darkness</title>
+  <meta name="description"
+    content="A development log entry for Descent Into Darkness by CritNCoin Studios." />
+
+  <!-- Three folders deep -> ../../../ -->
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="nav-title" href="../../../index.html">
+      <img src="../../../assets/images/branding/company-logo-title.png" alt="CritNCoin Studios crest" />
+      <span>CritNCoin Studios</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../../../index.html">Home</a>
+      <a href="../index.html">Game</a>
+      <a href="index.html" class="active">Dev Log</a>
+      <a href="../roadmap/">Roadmap</a>
+      <a href="../screenshots/">Screenshots</a>
+      <a href="../../../contact/">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page-wrap">
+
+    <p><a href="index.html">&larr; Back to Dev Log</a></p>
+
+    <!-- The single post is rendered here from posts.json by js/blog.js,
+         keyed by the ?id= in the URL. data-posts is relative to this page. -->
+    <article id="post-article" data-posts="posts.json">
+      <div class="loading-spinner" aria-hidden="true"></div>
+      <p class="text-center muted">Unsealing the page…</p>
+    </article>
+
+    <noscript>
+      <div class="empty-panel mt-2">
+        <h3>JavaScript required</h3>
+        <p class="muted">Dev log entries are loaded dynamically. Enable JavaScript to read this post.</p>
+      </div>
+    </noscript>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">CritNCoin Studios</div>
+        <p class="muted">Descent Into Darkness — dev log.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="../../../index.html">Home</a>
+        <a href="../index.html">Game</a>
+        <a href="../roadmap/">Roadmap</a>
+        <a href="../../../contact/">Contact</a>
+        <a href="https://github.com/CritnCoin" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+      <p class="footer-note">&copy; <span data-year>2026</span> CritNCoin Studios. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/main.js"></script>
+  <script src="../../../js/blog.js"></script>
+</body>
+</html>
